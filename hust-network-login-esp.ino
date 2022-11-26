@@ -19,7 +19,7 @@ String urlencode(String url) {
 
 void try_connect_wifi(const char *ssid, const char *password) {
   WiFi.begin(ssid, password);
-  while(WiFi.status() != WL_CONNECTED)
+  while (WiFi.status() != WL_CONNECTED)
   {
     Serial.print(".");
     delay(200);
@@ -74,6 +74,9 @@ void setup(){
 
 void loop(){
   WiFiClient client;
+  while (WiFi.status() != WL_CONNECTED) {
+    WiFi.reconnect();
+  }
   String querystr = get_querystr(client, "baidu.com", 80);
   try_login(client, querystr);
   delay(15000);
