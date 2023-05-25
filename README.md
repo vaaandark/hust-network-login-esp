@@ -2,7 +2,7 @@
 
 # HUST-Network-Login-ESP
 
-比极简主义更极简的华中科技大学校园网络认证工具。
+比极简主义更极简的华中科技大学校园网络认证工具，通过先计算加密再烧录到 nodemcu 的方法实现了加密认证。
 
 ## 需求
 
@@ -22,7 +22,7 @@ esp8266:esp8266 3.0.2     3.0.2  esp8266
 
 ## 编译烧录
 
-`config.h`是配置文件，你需要补充`SSID`、`SSID_PASSWORD`、`USERNAME`、`PASSWORD`，依次是你的 WIFI 名字和密码、你的校园网帐号和密码。
+`config.toml`是配置文件，你需要补充你的 WIFI 名字和密码、你的校园网帐号和密码。
 
 编译并烧录到`/dev/ttyUSB0`
 

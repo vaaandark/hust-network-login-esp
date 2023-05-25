@@ -51,7 +51,7 @@ void try_login(WiFiClient &client, String &querystr) {
   }
   const char *post_host = "192.168.50.3";
   int post_port = 8080;
-  String content = (String)"userId=" + USERNAME + "&password=" + PASSWORD + "&service=&queryString=" + querystr + "&passwordEncrypt=false";
+  String content = (String)"userId=" + USERNAME + "&password=" + PASSWORD + "&service=&queryString=" + querystr + "&passwordEncrypt=true";
   client.connect(post_host, post_port);
   String post = (String)"POST /eportal/InterFace.do?method=login HTTP/1.1\r\n" +
     "Host: " + post_host + "\r\n" +
